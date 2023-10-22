@@ -1,5 +1,5 @@
 from detector import Detector
-from PIL import Image
+import cv2
 import argparse
 
 if __name__ == '__main__':
@@ -26,6 +26,5 @@ if __name__ == '__main__':
             # Show the results
             for i, r in enumerate(results):
                 im_array = r.plot()  # plot a BGR numpy array of predictions
-                im = Image.fromarray(im_array[..., ::-1])  # RGB PIL image
-                im.show()  # show image
-                im.save('results'+str(i)+'.jpg')  # save image
+                cv2.imshow('Result', im_array)
+                cv2.waitKey(0) 
