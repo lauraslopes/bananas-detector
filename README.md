@@ -10,10 +10,10 @@ pip install -r requirements.txt
 ### Training
 ```
 # Training on cpu
-python main.py --train --dataset data/data.yaml --device cpu
+python main.py --train --dataset fruits-images/data.yaml --device cpu
 
 # Training on cuda device, i.e. 0 or 0,1,2,3
-python main.py --train --dataset data/data.yaml --device 0
+python main.py --train --dataset fruits-images/data.yaml --device 0
 ```
 
 You can change number of epochs and batch size by using arguments bellow on training command
@@ -29,10 +29,10 @@ Also, to change the weights used by the model to **train**, use the argument bel
 ### Inference
 ```
 # Test/inference on cpu
-python main.py --source data/test/ --device cpu
+python main.py --source fruits-images/test/ --device cpu
 
 # Training on cuda device, i.e. 0 or 0,1,2,3
-python main.py --source data/test/ --device 0
+python main.py --source fruits-images/test/ --device 0
 ```
 
 You can change the object confidence threshold for detection by using the argument bellow on inference command
