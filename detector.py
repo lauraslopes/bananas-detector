@@ -17,7 +17,7 @@ class Detector:
             mixup=1,
         )
 
-    def inference(self, source, conf):
+    def inference(self, source, conf, classes):
         # predict on an image
         return self.model.predict(
             source,
@@ -26,6 +26,7 @@ class Detector:
             save=True,
             save_txt=True,
             save_conf=True,
+            classes=int(classes),
         )
 
     def get_metrics(self):

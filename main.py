@@ -13,6 +13,7 @@ if __name__ == "__main__":
     parser.add_argument("--show-results", action="store_true", help="show results images with predictions")
     parser.add_argument("--source", type=str, default="", help="source for inference (path to an image or directory of images)")
     parser.add_argument("--conf", type=float, default=0.25, help="object confidence threshold for detection")
+    parser.add_argument("--classes", default="", help="filter results by class, i.e. classes=0")
     opt = parser.parse_args()
     print(opt)
 
@@ -21,7 +22,7 @@ if __name__ == "__main__":
         detector.train(opt.dataset, opt.epochs, opt.batch_size)
         print(detector.get_metrics())
     else:
-        results = detector.inference(opt.source, opt.conf)
+        results = detector.inference(opt.source, opt.conf, opt.classes)
 
         if opt.show_results:
             # Show the results
