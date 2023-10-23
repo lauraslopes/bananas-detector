@@ -14,6 +14,7 @@ class Detector:
             device=self.device,
             degrees=45,
             flipud=1,
+            mosaic=0,
         )
 
     def inference(self, source, conf, classes):
